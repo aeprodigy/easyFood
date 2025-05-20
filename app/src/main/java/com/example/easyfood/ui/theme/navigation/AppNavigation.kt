@@ -5,6 +5,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.easyfood.ui.theme.screens.HomeScreen
 
 @Composable
 fun AppNavigationGraph() {
@@ -16,6 +17,8 @@ fun AppNavigationGraph() {
         startDestination = Routes.HOME_SCREEN
     ) {
         composable(Routes.HOME_SCREEN) {
+            //Home Screen
+            HomeScreen()
 
         }
     }
