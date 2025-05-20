@@ -1,9 +1,20 @@
+import java.util.Properties
+
 plugins {
+
+
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     kotlin("kapt")
     id("dagger.hilt.android.plugin")
+}
+// Read .env properties
+val envFile = rootProject.file(".env")
+val envProperties = Properties()
+
+if (envFile.exists()) {
+    envFile.inputStream().use { envProperties.load(it) }
 }
 
 android {
@@ -18,6 +29,7 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "NEWS_API_KEY", "\"${envProperties["NEWS_API_KEY"]}\"")
     }
 
     buildTypes {
@@ -38,6 +50,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
 
@@ -67,6 +80,19 @@ dependencies {
     implementation(Dependencies.hiltAndroid)
     kapt(Dependencies.hiltAndroidCompiler)
     implementation(Dependencies.navigationCompose)
+
+    //retrofit
+    // Retrofit Core
+    implementation(Dependencies.retrofit)
+
+    // OkHttp Core and Logging
+    implementation(Dependencies.okhttp)
+    implementation(Dependencies.loggingInterceptor)
+
+    // JSON Converters
+    implementation(Dependencies.gsonConverter)
+    implementation(Dependencies.moshi)
+    implementation(Dependencies.moshiConverter)
 }
 kapt{
     correctErrorTypes = true
