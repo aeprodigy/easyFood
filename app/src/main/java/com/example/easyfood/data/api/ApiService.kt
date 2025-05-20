@@ -12,4 +12,4 @@ interface ApiService {
     )
 }
 
-//https://newsapi.org/v2/everything?q=bitcoin&apiKey=8a19cd0880944180af72ad19b0eccfb4
+//https://newsapi.org/v2/everything?q=bitcoin&apiKey=
