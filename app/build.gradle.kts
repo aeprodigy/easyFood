@@ -67,3 +67,6 @@ dependencies {
     implementation(Dependencies.hiltAndroid)
     kapt(Dependencies.hiltAndroidCompiler)
 }
+kapt{
+    correctErrorTypes = true
+}
