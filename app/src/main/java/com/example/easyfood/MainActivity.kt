@@ -8,10 +8,12 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color.Companion.White
+import androidx.compose.ui.graphics.Color
 import com.example.easyfood.ui.theme.EasyFoodTheme
 import com.example.easyfood.ui.theme.components.AppNavigationGraph
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,13 +22,15 @@ class MainActivity : ComponentActivity() {
             EasyFoodTheme {
                 //surface
                 Surface(
-                    modifier = Modifier.fillMaxWidth().background(color = Color.White)
-                ){
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .background(color = Color.White)
+                ) {
 
+                    //entry point
+                    AppEntryPoint()
                 }
-                //entry point
-                AppEntryPoint()
-                }
+            }
 
         }
     }

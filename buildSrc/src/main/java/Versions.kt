@@ -10,7 +10,12 @@ object Versions {
     const val testJunit = "1.1.5"
     const val espressoCore = "3.5.1"
 
+
+
     //hilt for dependency injection
     const val hilt = "2.44"
     const val hiltCompiler = "1.0.0"
+    const val hiltNavigationCompose = "1.0.0"
+
+
 }
