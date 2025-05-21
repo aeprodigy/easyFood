@@ -1,7 +1,8 @@
 package com.example.easyfood.data.api
 import com.example.easyfood.BuildConfig
 import com.example.easyfood.data.entity.NewsResponse
-import okhttp3.Response
+import retrofit2.Response
+
 import retrofit2.http.GET
 
 import retrofit2.http.Query
