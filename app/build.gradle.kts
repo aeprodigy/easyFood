@@ -93,6 +93,10 @@ dependencies {
     implementation(Dependencies.gsonConverter)
     implementation(Dependencies.moshi)
     implementation(Dependencies.moshiConverter)
+
+    // Coroutines
+    implementation(Dependencies.core)
+    implementation(Dependencies.android)
 }
 kapt{
     correctErrorTypes = true
